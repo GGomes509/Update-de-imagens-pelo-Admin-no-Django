@@ -1,0 +1,43 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<br>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item"><a href="/">Home</a></li>
+       <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+    </ol>
+</nav>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-2"><img src="{% if product.imagem %}{{ product.imagem.url }}{% else %}{% static 'img/no_imagem.jpg' %}{% endif %}"></div>
+            <div class="col-6">
+                <h1 style="margin-left: 15px; margin-top:15px;">{{ product.name }}</h1>
+                <a href="{{ product.category.get_absolute_url }}"></a>
+                <h2 style="margin-left: 15px; margin-top:15px;">{{product.category}}</h2>
+                <p style="margin-left: 15px; margin-top:15px;">
+                    R$ {{ product.price }}
+                    <br>
+                   
+                </p>
+                 <p style="margin-left: 15px; margin-top:15px;"> {{ product.description }}</p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="height:50px;">
+   <div>
+    
+   </div>
+    
+   
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+# Update-de-imagens-pelo-Admin-no-Django
